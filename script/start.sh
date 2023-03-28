@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 PROJECT_ROOT="/home/ubuntu/app"
-JAR_FILE="$PROJECT_ROOT/cloneCode-tinder.jar"
+JAR_FILE="$PROJECT_ROOT/myKiosk-0.0.1.jar"
 
 APP_LOG="$PROJECT_ROOT/application.log"
 ERROR_LOG="$PROJECT_ROOT/error.log"
