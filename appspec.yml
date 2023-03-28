@@ -14,10 +14,10 @@ permissions:
 
 hooks:
   AfterInstall:
-    - location: script/stop.sh
+    - location: /home/ubuntu/app/script/stop.sh
       timeout: 60
       runas: ubuntu
   ApplicationStart:
-    - location: script/start.sh
+    - location: /home/ubuntu/app/script/start.sh
       timeout: 60
       runas: ubuntu
