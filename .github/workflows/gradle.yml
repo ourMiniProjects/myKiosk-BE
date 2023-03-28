@@ -39,6 +39,13 @@ jobs:
           distribution: 'temurin'
           java-version: '11'
 
+      - uses: actions/checkout@v3
+        # application properties 파일 생성
+      - run: touch ./src/main/resources/application.properties
+        # secrets에 저장한 값 불러와서 application 파일에 복사
+      - run: echo "${{ secrets.APPLICATION }}" > ./src/main/resources/application.properties
+      - run: cat ./src/main/resources/application.properties
+
       # (3) Gradle build (Test 제외)
       - name: Gradle 빌드를 진행합니다
         uses: gradle/gradle-build-action@0d13054264b0bb894ded474f08ebb30921341cee
