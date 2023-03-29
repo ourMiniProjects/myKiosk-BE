@@ -1,4 +1,4 @@
-package ourminiprojects.mykiosk.member;
+package ourminiprojects.mykiosk.member.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import ourminiprojects.mykiosk.member.dto.Members;

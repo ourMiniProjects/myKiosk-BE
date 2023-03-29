@@ -1,7 +1,6 @@
-package ourminiprojects.mykiosk.member;
+package ourminiprojects.mykiosk.member.service;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -9,6 +8,7 @@ import ourminiprojects.mykiosk.member.dto.Members;
 import ourminiprojects.mykiosk.member.dto.MembersLoginRequestDto;
 import ourminiprojects.mykiosk.member.dto.MembersResponseMsgDto;
 import ourminiprojects.mykiosk.member.dto.MembersSignupRequestDto;
+import ourminiprojects.mykiosk.member.repository.MembersRepository;
 
 import javax.servlet.http.HttpServletResponse;
 

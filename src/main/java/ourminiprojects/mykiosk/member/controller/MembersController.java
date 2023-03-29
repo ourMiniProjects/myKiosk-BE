@@ -1,15 +1,15 @@
-package ourminiprojects.mykiosk.member;
+package ourminiprojects.mykiosk.member.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import ourminiprojects.mykiosk.member.service.MembersService;
 import ourminiprojects.mykiosk.member.dto.MembersLoginRequestDto;
 import ourminiprojects.mykiosk.member.dto.MembersResponseMsgDto;
 import ourminiprojects.mykiosk.member.dto.MembersSignupRequestDto;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @RestController
