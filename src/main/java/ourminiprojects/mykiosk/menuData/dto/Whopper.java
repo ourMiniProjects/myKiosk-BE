@@ -1,18 +1,22 @@
-package ourminiprojects.mykiosk.menu.dto;
+package ourminiprojects.mykiosk.menuData.dto;
 
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 
 @Entity
 @RequiredArgsConstructor
-public class Beverage {
+@Setter
+@Getter
+public class Whopper {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
-    private String beverageName;
+    private String foodName;
 
     @Column(nullable = false)
     private int price;
