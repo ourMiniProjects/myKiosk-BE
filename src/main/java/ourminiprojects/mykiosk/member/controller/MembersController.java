@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ourminiprojects.mykiosk.member.service.MembersService;
 import ourminiprojects.mykiosk.member.dto.MembersLoginRequestDto;
-import ourminiprojects.mykiosk.member.dto.MembersResponseMsgDto;
+import ourminiprojects.mykiosk.config.ResponseMsgDto;
 import ourminiprojects.mykiosk.member.dto.MembersSignupRequestDto;
 
 import javax.servlet.http.HttpServletResponse;
@@ -20,12 +20,12 @@ public class MembersController {
     private final MembersService membersService;
 
     @PostMapping("/signup")
-    public MembersResponseMsgDto signup(@RequestBody MembersSignupRequestDto membersSignupRequestDto, HttpServletResponse response) {
+    public ResponseMsgDto signup(@RequestBody MembersSignupRequestDto membersSignupRequestDto, HttpServletResponse response) {
         return membersService.signup(membersSignupRequestDto, response);
     }
 
     @PostMapping("/login")
-    public MembersResponseMsgDto login(@RequestBody MembersLoginRequestDto membersLoginRequestDto, HttpServletResponse response) {
+    public ResponseMsgDto login(@RequestBody MembersLoginRequestDto membersLoginRequestDto, HttpServletResponse response) {
         return membersService.login(membersLoginRequestDto, response);
     }
 }

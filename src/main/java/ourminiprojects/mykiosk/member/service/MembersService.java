@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ourminiprojects.mykiosk.member.dto.Members;
 import ourminiprojects.mykiosk.member.dto.MembersLoginRequestDto;
-import ourminiprojects.mykiosk.member.dto.MembersResponseMsgDto;
+import ourminiprojects.mykiosk.config.ResponseMsgDto;
 import ourminiprojects.mykiosk.member.dto.MembersSignupRequestDto;
 import ourminiprojects.mykiosk.member.repository.MembersRepository;
 
@@ -26,13 +26,13 @@ public class MembersService {
     }
 
     //위 핸들러를 쓰고 dto로 리턴하기
-    private MembersResponseMsgDto handleMemberException(String message, HttpStatus status, HttpServletResponse response) {
+    private ResponseMsgDto handleMemberException(String message, HttpStatus status, HttpServletResponse response) {
         membersExceptionHandler(response, status.value());
-        return new MembersResponseMsgDto(message, status.value());
+        return new ResponseMsgDto(message, status.value());
     }
 
     @Transactional
-    public MembersResponseMsgDto signup(MembersSignupRequestDto membersSignupRequestDto, HttpServletResponse response) {
+    public ResponseMsgDto signup(MembersSignupRequestDto membersSignupRequestDto, HttpServletResponse response) {
         String phoneNumber = membersSignupRequestDto.getPhoneNumber();
 
 
@@ -55,7 +55,7 @@ public class MembersService {
 
     }
 
-    public MembersResponseMsgDto login(MembersLoginRequestDto membersLoginRequestDto, HttpServletResponse response) {
+    public ResponseMsgDto login(MembersLoginRequestDto membersLoginRequestDto, HttpServletResponse response) {
         Members found = membersRepository.findByPhoneNumber(membersLoginRequestDto.getPhoneNumber());
         String regExp = "^010(\\d{4})(\\d{4})$";
 
