@@ -16,6 +16,11 @@ configurations {
 
 repositories {
     mavenCentral()
+    maven {
+        url 'http://maven.djWjrn.wjWjrn/dadd-public'
+        allowInsecureProtocol true
+    }
+    gradlePluginPortal()
 }
 
 dependencies {
